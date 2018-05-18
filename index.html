@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Psychic Game</title>
+  <script type="text/javascript" src="assets/javascript/game.js"></script>
 </head>
 
 <body>
@@ -14,50 +15,7 @@
     <p id = "lives">Guesses Left: 5</p>
     <p id = "guesses">Guesses: </p>
 
-    <script type ="text/javascript">
     
-    var letters = ["a","b","c","d","e","f","g","h","i","j",
-                "k","l","m","n","o","p","q","r","s","t",
-                "u","v","w","x","y","z"];
-    
-    var wins = 0;
-    var losses = 0;
-    var lives = 5;
-    var guesses = [];
-   
-    var computerGuess = letters[Math.floor(Math.random() * letters.length)];
-        console.log(computerGuess);
-    
-    document.onkeyup = function(event) {
-        var userGuess = event.key;
-        console.log(userGuess);
-        guesses.push(userGuess);
-        
-        
-        if (userGuess === computerGuess) {
-            wins++;
-            alert("correct!");
-            lives = 5;
-            
-        }
-        else if (userGuess != computerGuess) {
-            lives--;
-            alert("wrong!");
-
-        }
-        if (lives == 0) {
-            losses ++;
-            lives = 5
-            
-        }
-
-        document.getElementById('wins').innerHTML = "Wins: " + wins;
-        document.getElementById('losses').innerHTML = "Losses: " + losses;
-        document.getElementById('lives').innerHTML = "Guesses Left: " + lives;
-        document.getElementById('guesses').innerHTML = "Guesses: " + guesses;
-    }
-
-    </script>
 
 </body>
 
